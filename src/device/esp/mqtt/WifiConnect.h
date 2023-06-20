@@ -4,6 +4,7 @@
 #include <WiFi.h>
 #include <HTTPClient.h>
 #include <PubSubClient.h>
+#include <HardwareSerial.h>
 #include <Arduino_JSON.h>
 
 class WifiConnect

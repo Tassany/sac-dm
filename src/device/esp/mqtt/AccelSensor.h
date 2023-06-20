@@ -1,28 +1,21 @@
-#include <memory>
 #ifndef AccelSensor_h
 #define AccelSensor_h
 
 #include <Arduino.h>
-#include <Adafruit_MPU6050.h>
-#include <Adafruit_Sensor.h>
+#include <MPU6050.h>
 #include <Wire.h>
-#include <stdio.h>
 
+class AccelSensor {
+  private:
+    //int ledPin;
+    //unsigned char ledState;
+    MPU6050 mpu;
 
-
-class AccelSensor
-{
-private:
-    // int ledPin;
-    // unsigned char ledState;
-    Adafruit_MPU6050 mpu;
-
-public:
-    sensors_event_t a, g, temp;
+  public:
+    int16_t ax, ay, az;
     AccelSensor();
     void setConfig();
     void getEvent();
-    char* dataOutput(float AcclX, float AcclY, float AcclZ);
 };
 
 #endif
